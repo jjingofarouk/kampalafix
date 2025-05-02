@@ -10,9 +10,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <Provider store={store}>
       <ThemeProvider>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-1 px-4 sm:px-6 md:px-8 lg:px-12">{children}</main>
+          <Footer />
+        </div>
       </ThemeProvider>
     </Provider>
   );
