@@ -121,15 +121,7 @@ export default function Navbar() {
                     }`}
                   >
                     <div className="h-9 w-9 rounded-full bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center border-2 border-white/50 shadow-[0_0_10px_rgba(147,51,234,0.4)] overflow-hidden">
-                      {user.avatar ? (
-                        <img
-                          src={user.avatar}
-                          alt="User avatar"
-                          className="h-full w-full object-cover"
-                        />
-                      ) : (
-                        <User size={18} className="text-white" />
-                      )}
+                      <User size={18} className="text-white" />
                     </div>
                     <ChevronDown size={18} />
                   </button>
