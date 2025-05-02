@@ -1,11 +1,13 @@
-import { db } from './config';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { storage } from './config';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
-export const addDocument = async (collectionName: string, data: any) => {
-  return await addDoc(collection(db, collectionName), data);
+export const uploadFile = async (file: File, path: string): Promise<string> => {
+  const storageRef = ref(storage, path);
+  await uploadBytes(storageRef, file);
+  return await getDownloadURL(storageRef);
 };
 
-export const getDocuments = async (collectionName: string) => {
-  const snapshot = await getDocs(collection(db, collectionName));
-  return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+export const getFileURL = async (path: string): Promise<string> => {
+  const storageRef = ref(storage, path);
+  return await getDownloadURL(storageRef);
 };
