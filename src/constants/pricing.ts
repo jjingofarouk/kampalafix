@@ -1,0 +1,5 @@
+export const PRICING = {
+  BASE_RATE: 30000,
+  HOURLY_RATE: 10000,
+  TAX_RATE: 0.18,
+};
