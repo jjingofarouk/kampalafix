@@ -1,12 +1,13 @@
+// src/firebase/functions.ts
 import { app } from './config';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 import { db } from './config';
 import { doc, updateDoc } from 'firebase/firestore';
 
-// Initialize callable functions
+// Setup Firebase Functions
 const functions = getFunctions(app);
 
-// Generic caller for any Firebase callable function
+// ✅ EXPORT THIS
 export const callFunction = async <T = any, R = any>(
   functionName: string,
   data?: T
@@ -16,7 +17,7 @@ export const callFunction = async <T = any, R = any>(
   return result.data;
 };
 
-// Update user profile in Firestore
+// Optional: update user profile
 export const updateUserProfile = async (
   userId: string,
   data: { [key: string]: any }
