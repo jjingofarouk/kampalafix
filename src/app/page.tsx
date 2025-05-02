@@ -1,3 +1,4 @@
+// app/page.tsx
 import ServiceCard from '../components/Service/ServiceCard';
 import { services } from '../constants/services';
 
