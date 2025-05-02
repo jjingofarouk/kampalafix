@@ -1,5 +1,5 @@
 import React from 'react';
-import { Booking } from '../../types/Booking'; // Adjust path as needed
+import { Booking } from '../../types/booking'; // Adjust path as needed
 
 interface BookingListProps {
   bookings: Booking[];
