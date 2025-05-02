@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from 'next/link';
 import { useServices } from '../../hooks/useServices';
 import ServiceDetails from '../../components/Service/ServiceDetails';
 import BookService from '../../components/Service/BookService';
