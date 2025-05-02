@@ -1,14 +1,14 @@
+"use client";
+
 import { auth } from './config';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { User } from '../types/user';
 
-export const login = async (email: string, password: string) => {
-  return await signInWithEmailAndPassword(auth, email, password);
+export const login = async (email: string, password: string): Promise<User> => {
+  const userCredential = await signInWithEmailAndPassword(auth, email, password);
+  return { id: userCredential.user.uid, email: userCredential.user.email || '' };
 };
 
-export const register = async (email: string, password: string) => {
-  return await createUserWithEmailAndPassword(auth, email, password);
-};
-
-export const logout = async () => {
-  return await signOut(auth);
+export const logout = async (): Promise<void> => {
+  await signOut(auth);
 };
