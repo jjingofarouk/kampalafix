@@ -1,4 +1,4 @@
-import { useParams } from 'next/link';
+import { useRouter } from 'next/router';
 import { useServices } from '../../hooks/useServices';
 import ServiceDetails from '../../components/Service/ServiceDetails';
 import BookService from '../../components/Service/BookService';
@@ -7,7 +7,8 @@ import { useState } from 'react';
 import Button from '../../components/UI/Button';
 
 export default function ServicePage() {
-  const { id } = useParams();
+  const router = useRouter();
+  const { id } = router.query;
   const { services } = useServices();
   const service = services.find((s) => s.id === id);
   const [showBooking, setShowBooking] = useState(false);
