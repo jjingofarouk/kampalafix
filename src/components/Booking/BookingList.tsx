@@ -1,20 +1,27 @@
-import { Booking } from '../../types/booking';
-import BookingStatus from './BookingStatus';
+import React from 'react';
+import { Booking } from '../../types/Booking'; // Adjust path as needed
 
 interface BookingListProps {
   bookings: Booking[];
+  className?: string;
 }
 
-export default function BookingList({ bookings }: BookingListProps) {
+const BookingList: React.FC<BookingListProps> = ({ bookings, className }) => {
   return (
-    <div className="space-y-4">
-      {bookings.map((booking) => (
-        <div key={booking.id} className="bg-white p-4 rounded-lg shadow">
-          <h3>{booking.serviceName}</h3>
-          <p>{booking.date}</p>
-          <BookingStatus status={booking.status} />
-        </div>
-      ))}
+    <div className={className}>
+      {bookings.length === 0 ? (
+        <p className="p-4 text-gray-500">No bookings found.</p>
+      ) : (
+        bookings.map((booking) => (
+          <div key={booking.id} className="p-4 border-b border-gray-200">
+            <p className="text-lg font-semibold">{booking.serviceName}</p>
+            <p className="text-sm text-gray-500">{booking.date}</p>
+            <p className="text-sm italic">{booking.status}</p>
+          </div>
+        ))
+      )}
     </div>
   );
-}
+};
+
+export default BookingList;
