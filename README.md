@@ -1,5 +1,3 @@
-Here’s a polished and professional README.md for KampalaFix:
-
 # KampalaFix
 
 **KampalaFix** is your home service hub, connecting you with trusted electricians, plumbers, cleaners, and carpenters in Kampala. Book services by location and availability, with features like real-time chat, ratings, payments, and calendar syncing — all built to impress and scale.
@@ -10,7 +8,7 @@ Here’s a polished and professional README.md for KampalaFix:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/kampalafix.git
+   git clone https://github.com/jjingofarouk/kampalafix.git
    cd kampalafix
 
 	2.	Install dependencies
@@ -55,4 +53,3 @@ License
 This project is licensed under the MIT License.
 See the LICENSE file for more information.
 
-Want me to generate a matching `LICENSE` file for MIT?
