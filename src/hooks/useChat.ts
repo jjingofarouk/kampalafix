@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { getDocuments } from '../firebase/db';
 import { ChatMessage } from '../types/chat';
@@ -7,7 +9,7 @@ export function useChat() {
 
   useEffect(() => {
     const fetchMessages = async () => {
-      const data = await getDocuments('messages');
+      const data = await getDocuments<ChatMessage>('messages');
       setMessages(data);
     };
     fetchMessages();
