@@ -30,7 +30,7 @@
     "postcss": "^8.0.0",
     "typescript": "^5.0.0"
   },
-  "resolutions": {
-    "undici": "5.27.2"
+  "overrides": {
+    "undici": "5.26.5"
   }
 }
