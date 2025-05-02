@@ -1,3 +1,4 @@
+// src/firebase/config.ts
 import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
@@ -14,7 +15,7 @@ const firebaseConfig = {
 };
 
 // Prevent multiple app instances in dev (hot reload)
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+export const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
