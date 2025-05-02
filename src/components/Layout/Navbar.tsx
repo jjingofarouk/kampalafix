@@ -7,16 +7,16 @@ export default function Navbar() {
   return (
     <nav className="bg-orange-500 text-white p-4">
       <div className="container mx-auto flex justify-between">
-        <Link to="/" className="text-xl font-bold">KampalaFix</Link>
+        <Link href="/" className="text-xl font-bold">KampalaFix</Link>
         <div className="space-x-4">
-          <Link to="/services">Services</Link>
+          <Link href="/services">Services</Link>
           {user ? (
             <>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link href="/dashboard">Dashboard</Link>
               <button onClick={logout}>Logout</button>
             </>
           ) : (
-            <Link to="/login">Login</Link>
+            <Link href="/login">Login</Link>
           )}
         </div>
       </div>
