@@ -1,4 +1,7 @@
 // app/layout.tsx
+
+"use client";
+
 import '../styles/globals.css';
 import { ThemeProvider } from '../context/ThemeContext';
 import Navbar from '../components/Layout/Navbar';
