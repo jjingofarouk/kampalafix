@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { auth } from '../firebase/config';
 import { onAuthStateChanged } from 'firebase/auth';
+import { login as firebaseLogin, logout as firebaseLogout } from '../firebase/auth';
 import { User } from '../types/user';
 
 export function useAuth() {
@@ -19,5 +20,13 @@ export function useAuth() {
     return () => unsubscribe();
   }, []);
 
-  return { user };
+  const login = async (email: string, password: string) => {
+    return await firebaseLogin(email, password);
+  };
+
+  const logout = async () => {
+    return await firebaseLogout();
+  };
+
+  return { user, login, logout };
 }
