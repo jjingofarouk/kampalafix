@@ -1,10 +1,15 @@
+// components/Chat/ChatWindow.tsx or ChatWindow.jsx
 "use client";
 
 import { useChat } from '../../hooks/useChat';
 import MessageBubble from './MessageBubble';
 import TypingIndicator from './TypingIndicator';
 
-export default function ChatWindow() {
+interface ChatWindowProps {
+  className?: string;
+}
+
+export default function ChatWindow({ className = '' }: ChatWindowProps) {
   const { messages, sendMessage } = useChat();
 
   const handleSend = (e: React.FormEvent) => {
@@ -13,7 +18,7 @@ export default function ChatWindow() {
   };
 
   return (
-    <div className="flex flex-col h-[500px] bg-white rounded-lg shadow">
+    <div className={`flex flex-col h-[500px] bg-white rounded-lg shadow ${className}`}>
       <div className="flex-1 overflow-y-auto p-4">
         {messages.map((msg) => (
           <MessageBubble key={msg.id} message={msg} />
