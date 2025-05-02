@@ -1,3 +1,5 @@
+"use client";
+
 import { useChat } from '../../hooks/useChat';
 import MessageBubble from './MessageBubble';
 import TypingIndicator from './TypingIndicator';
