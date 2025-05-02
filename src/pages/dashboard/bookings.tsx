@@ -1,5 +1,6 @@
 import BookingList from '../../components/Booking/BookingList';
 import { useBookings } from '../../hooks/useBookings';
+import Sidebar from '../../components/Layout/Sidebar'; // Add this line
 
 export default function DashboardBookings() {
   const { bookings } = useBookings();
