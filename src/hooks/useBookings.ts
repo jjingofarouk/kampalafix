@@ -9,7 +9,7 @@ export function useBookings() {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const data = await getDocuments('bookings');
+      const data = await getDocuments<Booking>('bookings');
       setBookings(data);
     };
     fetchBookings();
