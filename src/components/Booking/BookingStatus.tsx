@@ -1,9 +1,9 @@
 interface BookingStatusProps {
-  status: string;
+  status: 'pending' | 'confirmed' | 'cancelled';
 }
 
 export default function BookingStatus({ status }: BookingStatusProps) {
-  const statusStyles = {
+  const statusStyles: Record<BookingStatusProps['status'], string> = {
     pending: 'bg-yellow-100 text-yellow-800',
     confirmed: 'bg-green-100 text-green-800',
     cancelled: 'bg-red-100 text-red-800',
