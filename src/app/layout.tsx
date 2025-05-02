@@ -1,8 +1,10 @@
 // app/layout.tsx
+import '../styles/globals.css';
 import { ThemeProvider } from '../context/ThemeContext';
 import Navbar from '../components/Layout/Navbar';
 import Footer from '../components/Layout/Footer';
-import '../styles/globals.css';
+import { Provider } from 'react-redux';
+import { store } from '../store';
 
 export const metadata = {
   title: 'KampalaFix',
@@ -13,11 +15,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <Provider store={store}>
+          <ThemeProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </Provider>
       </body>
     </html>
   );
