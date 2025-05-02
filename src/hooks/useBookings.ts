@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from 'react';
 import { getDocuments } from '../firebase/db';
 import { Booking } from '../types/booking';
