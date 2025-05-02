@@ -1,8 +1,7 @@
-import { httpsCallable, getFunctions } from 'firebase/functions';
+import { db } from './config';
+import { doc, updateDoc } from 'firebase/firestore';
 
-const functions = getFunctions();
-
-export const callFunction = async (name: string, data: any) => {
-  const callable = httpsCallable(functions, name);
-  return await callable(data);
+export const updateUserProfile = async (userId: string, data: { [key: string]: any }) => {
+  const userRef = doc(db, 'users', userId);
+  await updateDoc(userRef, data);
 };
