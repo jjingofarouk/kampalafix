@@ -7,7 +7,7 @@ export function useServices() {
 
   useEffect(() => {
     const fetchServices = async () => {
-      const data = await getDocuments('services');
+      const data = await getDocuments<Service>('services');
       setServices(data);
     };
     fetchServices();
