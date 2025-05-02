@@ -1,5 +1,5 @@
 import Button from '../UI/Button';
-import { Link } from 'react-router-dom';
+import { Link } from 'next/link';
 
 export default function PaymentSuccess() {
   return (
