@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'next/link';
 import { useAuth } from '../../hooks/useAuth';
 
 export default function Navbar() {
